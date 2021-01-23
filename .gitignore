@@ -29,4 +29,5 @@ nb-configuration.xml
 *.rej
 
 # Gradle
+.gradle/
 build/
