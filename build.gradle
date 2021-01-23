@@ -58,3 +58,4 @@ compileTestKotlin {
 test {
     useJUnitPlatform()
 }
+task stage(dependsOn: ['build', 'clean'])
