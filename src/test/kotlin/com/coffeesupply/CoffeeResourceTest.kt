@@ -9,12 +9,11 @@ import org.junit.jupiter.api.Test
 class CoffeeResourceTest {
 
     @Test
-    fun testHelloEndpoint() {
+    fun testGetAllCoffeesEndpoint() {
         given()
           .`when`().get("/coffee")
           .then()
              .statusCode(200)
-             .body(`is`("hello"))
     }
 
 }

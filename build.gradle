@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.quarkus:quarkus-smallrye-openapi'
     implementation 'io.quarkus:quarkus-jdbc-postgresql'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
     implementation 'io.quarkus:quarkus-hibernate-orm-panache-kotlin'
@@ -20,6 +21,8 @@ dependencies {
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:kotlin-extensions'
+    testCompile "com.github.tomakehurst:wiremock-jre8:2.27.2"
+    testImplementation "io.kotest:kotest-runner-junit5:4.1.3"
 }
 
 group 'coffeesupply'
@@ -53,5 +56,5 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
 }
 test {
-    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    useJUnitPlatform()
 }
